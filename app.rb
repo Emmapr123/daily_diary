@@ -2,6 +2,7 @@ require 'sinatra/base'
 require './lib/diaries'
 
 class DailyDiary < Sinatra::Base
+  set :sessions, :method_overwrite
 
   get '/' do
     redirect '/diary_entries'

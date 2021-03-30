@@ -21,4 +21,9 @@ describe Diaries do
       expect(sophia.name).to eq 'Thursday'
     end
   end
+
+  describe '.find' do 
+    it 'finds a diary by id' do 
+    end 
+  end
 end
