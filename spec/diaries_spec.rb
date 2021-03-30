@@ -14,7 +14,7 @@ describe Diaries do
 
   describe '.create' do
     it 'creates a new diary' do 
-      sophia = Diaries.new(id: '2', input: 'Today was a lovely day', name: 'Thursday')
+      sophia = Diaries.create(input: 'Today was a lovely day', name: 'Thursday')
 
       expect(sophia).to be_a Diaries 
       expect(sophia.input).to eq 'Today was a lovely day'
@@ -24,6 +24,11 @@ describe Diaries do
 
   describe '.find' do 
     it 'finds a diary by id' do 
+      Diaries.create(input: 'Today was a lovely day', name: 'Thursday')
+      sophia = Diaries.find('2')
+
+      expect(sophia.input).to eq 'Today was a lovely day'
+      expect(sophia.name).to eq 'Thursday'
     end 
   end
 end

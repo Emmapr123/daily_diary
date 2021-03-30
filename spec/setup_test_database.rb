@@ -2,7 +2,7 @@ require 'pg'
 
 def reset_table
   connection = PG.connect(dbname: 'diary_entries_test')
-  connection.exec("TRUNCATE diary_entries;")
+  connection.exec("TRUNCATE diary_entries RESTART IDENTITY;")
   connection.exec("INSERT INTO diary_entries (input, name) VALUES ('Dear Diary', 'Dear Diary');")
 end
 

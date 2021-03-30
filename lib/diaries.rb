@@ -21,4 +21,11 @@ class Diaries
     result = DatabaseConnection.query("INSERT INTO diary_entries (name, input) VALUES('#{name}', '#{input}') RETURNING id, name, input;")
     Diaries.new(id: result[0]['id'], name: result[0]['name'], input: result[0]['input']) 
   end
+
+  def self.find(id)
+    return nil unless id
+
+    result = DatabaseConnection.query("SELECT * FROM diary_entries WHERE id = '#{id}'")    
+    Diaries.new(id: result[0]['id'], name: result[0]['name'], input: result[0]['input']) 
+  end 
 end 
