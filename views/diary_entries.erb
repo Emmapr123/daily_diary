@@ -1,0 +1,15 @@
+<html>
+  <body>
+    <h1> Diary entries </h1>
+     <ul> <% @entries.each do |entry| %>
+     <li>
+        <%= href='/view_entry' value="#{entry.input}" > entry.title %>
+      </li>
+     <% end %>
+     </ul>
+
+     <form action='/add_entry'>
+      <input type='submit' value='add entry'>
+    </form>
+  </body>
+</html>
