@@ -14,7 +14,7 @@ describe Diaries do
 
   describe '.create' do
     it 'creates a new diary' do 
-      sophia = Diaries.new(input: 'Today was a lovely day', name: 'Thursday')
+      sophia = Diaries.new(id: '2', input: 'Today was a lovely day', name: 'Thursday')
 
       expect(sophia).to be_a Diaries 
       expect(sophia.input).to eq 'Today was a lovely day'
